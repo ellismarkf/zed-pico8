@@ -1,0 +1,14 @@
+[package]
+name = "zed-pico8"
+version = "0.1.0"
+edition = "2021"
+description = "PICO-8 language support for the Zed editor (syntax highlighting, autocomplete, hover docs, signature help, diagnostics)"
+license = "MIT"
+repository = "https://github.com/ellismarkf/zed-pico8"
+
+[lib]
+path = "src/lib.rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+zed_extension_api = "0.7.0"

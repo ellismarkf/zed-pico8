@@ -1,0 +1,17 @@
+id = "pico8"
+name = "PICO-8"
+description = "PICO-8 language support for Zed — syntax highlighting for PICO-8 Lua & cartridges (.p8, .p8.lua) plus full PICO-8 API autocomplete, hover docs, signature help, and diagnostics."
+version = "0.1.0"
+schema_version = 1
+authors = ["Mark Ellis <https://github.com/ellismarkf>"]
+repository = "https://github.com/ellismarkf/zed-pico8"
+snippets = "./snippets/pico-8.json"
+
+[grammars.pico8]
+repository = "https://github.com/ellismarkf/zed-pico8"
+rev = "622cc2b6db0e9af6e45c5751c1be00ba9c1b2598"
+path = "grammars/tree-sitter-pico8"
+
+[language_servers.pico8-ls]
+name = "PICO-8 Language Server"
+languages = ["PICO-8"]

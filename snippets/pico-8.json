@@ -1,0 +1,1082 @@
+{
+  "for": {
+    "prefix": "for",
+    "body": [
+      "for ${1:i}=${2:1},${3:10} do",
+      "\t$0",
+      "end"
+    ],
+    "description": "for loop"
+  },
+  "fors": {
+    "prefix": "fors",
+    "body": [
+      "for ${1:i}=${2:1},${3:10},${4:2} do",
+      "\t$0",
+      "end"
+    ],
+    "description": "for loop with step"
+  },
+  "forall": {
+    "prefix": "forall",
+    "body": [
+      "for ${1:v} in all(${2:t}) do",
+      "\t$0",
+      "end"
+    ],
+    "description": "for v in all(t)"
+  },
+  "forpair": {
+    "prefix": "forpair",
+    "body": [
+      "for ${1:k},${2:v} in pairs(${3:t}) do",
+      "\t$0",
+      "end"
+    ],
+    "description": "for k,v in pairs(t)"
+  },
+  "while": {
+    "prefix": "while",
+    "body": [
+      "while ${1:cond} do",
+      "\t$0",
+      "end"
+    ],
+    "description": "while loop"
+  },
+  "repeat": {
+    "prefix": "repeat",
+    "body": [
+      "repeat",
+      "\t$0",
+      "until ${1:cond}"
+    ],
+    "description": "repeat until"
+  },
+  "if": {
+    "prefix": "if",
+    "body": [
+      "if ${1:cond} then",
+      "\t$0",
+      "end"
+    ],
+    "description": "if"
+  },
+  "ifel": {
+    "prefix": "ifel",
+    "body": [
+      "if ${1:cond} then",
+      "\t$2",
+      "else",
+      "\t$0",
+      "end"
+    ],
+    "description": "if/else"
+  },
+  "iif": {
+    "prefix": "iif",
+    "body": [
+      "if (${1:cond}) ${0:stmt}"
+    ],
+    "description": "PICO-8 single-line if"
+  },
+  "fun": {
+    "prefix": "fun",
+    "body": [
+      "function ${1:name}(${2})",
+      "\t$0",
+      "end"
+    ],
+    "description": "function"
+  },
+  "lfun": {
+    "prefix": "lfun",
+    "body": [
+      "local function ${1:name}(${2})",
+      "\t$0",
+      "end"
+    ],
+    "description": "local function"
+  },
+  "pheader": {
+    "prefix": "pheader",
+    "body": [
+      "pico-8 cartridge // http://www.pico-8.com",
+      "version 42",
+      "__lua__",
+      "$0"
+    ],
+    "description": "Cartridge header"
+  },
+  "game": {
+    "prefix": "game",
+    "body": [
+      "function _init()",
+      "\t$0",
+      "end",
+      "",
+      "function _update60()",
+      "\t",
+      "end",
+      "",
+      "function _draw()",
+      "\tcls()",
+      "end"
+    ],
+    "description": "60fps game skeleton"
+  },
+  "game30": {
+    "prefix": "game30",
+    "body": [
+      "function _init()",
+      "\t$0",
+      "end",
+      "",
+      "function _update()",
+      "\t",
+      "end",
+      "",
+      "function _draw()",
+      "\tcls()",
+      "end"
+    ],
+    "description": "30fps game skeleton"
+  },
+  "pconsts": {
+    "prefix": "pconsts",
+    "body": [
+      "left,right,up,down,o,x=0,1,2,3,4,5",
+      "black,dark_blue,dark_purple,dark_green,brown,dark_gray,light_gray,white,red,orange,yellow,green,blue,indigo,pink,peach=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",
+      "$0"
+    ],
+    "description": "Button and colour constants"
+  },
+  "music": {
+    "prefix": "music",
+    "body": [
+      "music(${1:n}${2:,fade,mask})"
+    ],
+    "description": "Play music pattern (-1 stops)"
+  },
+  "sfx": {
+    "prefix": "sfx",
+    "body": [
+      "sfx(${1:n}${2:,channel,offset,length})"
+    ],
+    "description": "Play sound effect (-1 stops)"
+  },
+  "cartdata": {
+    "prefix": "cartdata",
+    "body": [
+      "cartdata(\"${1:my_game_id}\")"
+    ],
+    "description": "Open persistent cart data (once per run)"
+  },
+  "dget": {
+    "prefix": "dget",
+    "body": [
+      "dget(${1:index})"
+    ],
+    "description": "Get number at cart data index"
+  },
+  "dset": {
+    "prefix": "dset",
+    "body": [
+      "dset(${1:index},${2:value})"
+    ],
+    "description": "Store number at cart data index"
+  },
+  "cstore": {
+    "prefix": "cstore",
+    "body": [
+      "cstore(${1:dest},${2:source},${3:len}${4:,filename})"
+    ],
+    "description": "Copy RAM to cart/file"
+  },
+  "reload": {
+    "prefix": "reload",
+    "body": [
+      "reload(${1:dest},${2:source},${3:len}${4:,filename})"
+    ],
+    "description": "Load cart data into RAM"
+  },
+  "cocreate": {
+    "prefix": "cocreate",
+    "body": [
+      "cocreate(${1:func})"
+    ],
+    "description": "Create coroutine"
+  },
+  "coresume": {
+    "prefix": "coresume",
+    "body": [
+      "coresume(${1:co}${2:,args})"
+    ],
+    "description": "Resume coroutine"
+  },
+  "costatus": {
+    "prefix": "costatus",
+    "body": [
+      "costatus(${1:co})"
+    ],
+    "description": "'running', 'suspended' or 'dead'"
+  },
+  "yield": {
+    "prefix": "yield",
+    "body": [
+      "yield()"
+    ],
+    "description": "Yield from a coroutine"
+  },
+  "camera": {
+    "prefix": "camera",
+    "body": [
+      "camera(${1:x},${2:y})"
+    ],
+    "description": "Set camera offset"
+  },
+  "circ": {
+    "prefix": "circ",
+    "body": [
+      "circ(${1:x},${2:y},${3:r}${4:,col})"
+    ],
+    "description": "Circle outline"
+  },
+  "circfill": {
+    "prefix": "circfill",
+    "body": [
+      "circfill(${1:x},${2:y},${3:r}${4:,col})"
+    ],
+    "description": "Filled circle"
+  },
+  "clip": {
+    "prefix": "clip",
+    "body": [
+      "clip(${1:x},${2:y},${3:w},${4:h})"
+    ],
+    "description": "Set clipping rectangle"
+  },
+  "cls": {
+    "prefix": "cls",
+    "body": [
+      "cls(${1:col})"
+    ],
+    "description": "Clear screen"
+  },
+  "color": {
+    "prefix": "color",
+    "body": [
+      "color(${1:col})"
+    ],
+    "description": "Set draw colour"
+  },
+  "cursor": {
+    "prefix": "cursor",
+    "body": [
+      "cursor(${1:x},${2:y}${3:,col})"
+    ],
+    "description": "Set print cursor"
+  },
+  "fget": {
+    "prefix": "fget",
+    "body": [
+      "fget(${1:n}${2:,flag})"
+    ],
+    "description": "Get sprite flag(s)"
+  },
+  "fset": {
+    "prefix": "fset",
+    "body": [
+      "fset(${1:n},${2:flag},${3:val})"
+    ],
+    "description": "Set sprite flag"
+  },
+  "flip": {
+    "prefix": "flip",
+    "body": [
+      "flip()"
+    ],
+    "description": "Flip back buffer"
+  },
+  "line": {
+    "prefix": "line",
+    "body": [
+      "line(${1:x0},${2:y0}${3:,x1,y1,col})"
+    ],
+    "description": "Draw line"
+  },
+  "pal": {
+    "prefix": "pal",
+    "body": [
+      "pal(${1:c0},${2:c1}${3:,p})"
+    ],
+    "description": "Swap colour (p: 0 draw, 1 screen)"
+  },
+  "palt": {
+    "prefix": "palt",
+    "body": [
+      "palt(${1:col},${2:true})"
+    ],
+    "description": "Set colour transparency"
+  },
+  "pget": {
+    "prefix": "pget",
+    "body": [
+      "pget(${1:x},${2:y})"
+    ],
+    "description": "Get pixel colour"
+  },
+  "pset": {
+    "prefix": "pset",
+    "body": [
+      "pset(${1:x},${2:y}${3:,col})"
+    ],
+    "description": "Set pixel"
+  },
+  "print": {
+    "prefix": "print",
+    "body": [
+      "print(${1:str}${2:,x,y,col})"
+    ],
+    "description": "Print text"
+  },
+  "rect": {
+    "prefix": "rect",
+    "body": [
+      "rect(${1:x0},${2:y0},${3:x1},${4:y1}${5:,col})"
+    ],
+    "description": "Rectangle outline"
+  },
+  "rectfill": {
+    "prefix": "rectfill",
+    "body": [
+      "rectfill(${1:x0},${2:y0},${3:x1},${4:y1}${5:,col})"
+    ],
+    "description": "Filled rectangle"
+  },
+  "sget": {
+    "prefix": "sget",
+    "body": [
+      "sget(${1:x},${2:y})"
+    ],
+    "description": "Get spritesheet pixel"
+  },
+  "sset": {
+    "prefix": "sset",
+    "body": [
+      "sset(${1:x},${2:y}${3:,col})"
+    ],
+    "description": "Set spritesheet pixel"
+  },
+  "spr": {
+    "prefix": "spr",
+    "body": [
+      "spr(${1:n},${2:x},${3:y}${4:,w,h,flip_x,flip_y})"
+    ],
+    "description": "Draw sprite"
+  },
+  "sspr": {
+    "prefix": "sspr",
+    "body": [
+      "sspr(${1:sx},${2:sy},${3:sw},${4:sh},${5:dx},${6:dy}${7:,dw,dh,flip_x,flip_y})"
+    ],
+    "description": "Stretch-draw spritesheet region"
+  },
+  "oval": {
+    "prefix": "oval",
+    "body": [
+      "oval(${1:x0},${2:y0},${3:x1},${4:y1}${5:,col})"
+    ],
+    "description": "Oval outline"
+  },
+  "ovalfill": {
+    "prefix": "ovalfill",
+    "body": [
+      "ovalfill(${1:x0},${2:y0},${3:x1},${4:y1}${5:,col})"
+    ],
+    "description": "Filled oval"
+  },
+  "rrect": {
+    "prefix": "rrect",
+    "body": [
+      "rrect(${1:x},${2:y},${3:w},${4:h},${5:r}${6:,col})"
+    ],
+    "description": "Rounded rectangle outline"
+  },
+  "rrectfill": {
+    "prefix": "rrectfill",
+    "body": [
+      "rrectfill(${1:x},${2:y},${3:w},${4:h},${5:r}${6:,col})"
+    ],
+    "description": "Filled rounded rectangle"
+  },
+  "pack": {
+    "prefix": "pack",
+    "body": [
+      "pack(${1:...})"
+    ],
+    "description": "Pack values into a table"
+  },
+  "unpack": {
+    "prefix": "unpack",
+    "body": [
+      "unpack(${1:t}${2:,i,j})"
+    ],
+    "description": "Unpack table values"
+  },
+  "select": {
+    "prefix": "select",
+    "body": [
+      "select(${1:n},${2:...})"
+    ],
+    "description": "Select from varargs"
+  },
+  "fillp": {
+    "prefix": "fillp",
+    "body": [
+      "fillp(${1:pattern})"
+    ],
+    "description": "Set fill pattern"
+  },
+  "tline": {
+    "prefix": "tline",
+    "body": [
+      "tline(${1:x0},${2:y0},${3:x1},${4:y1},${5:mx},${6:my}${7:,mdx,mdy})"
+    ],
+    "description": "Textured line (map)"
+  },
+  "btn": {
+    "prefix": "btn",
+    "body": [
+      "btn(${1:i}${2:,p})"
+    ],
+    "description": "Button state (0-5: left,right,up,down,o,x)"
+  },
+  "btnp": {
+    "prefix": "btnp",
+    "body": [
+      "btnp(${1:i}${2:,p})"
+    ],
+    "description": "Button pressed (with repeat)"
+  },
+  "dinput": {
+    "prefix": "dinput",
+    "body": [
+      "poke(0x5f2d,1)"
+    ],
+    "description": "Enable devkit mouse/keyboard"
+  },
+  "dkeyp": {
+    "prefix": "dkeyp",
+    "body": [
+      "stat(30)"
+    ],
+    "description": "Key pressed (devkit)"
+  },
+  "dkey": {
+    "prefix": "dkey",
+    "body": [
+      "stat(31)"
+    ],
+    "description": "Key character (devkit)"
+  },
+  "dmousex": {
+    "prefix": "dmousex",
+    "body": [
+      "stat(32)"
+    ],
+    "description": "Mouse X"
+  },
+  "dmousey": {
+    "prefix": "dmousey",
+    "body": [
+      "stat(33)"
+    ],
+    "description": "Mouse Y"
+  },
+  "dmousebtn": {
+    "prefix": "dmousebtn",
+    "body": [
+      "stat(34)"
+    ],
+    "description": "Mouse button bitfield"
+  },
+  "dmousewheel": {
+    "prefix": "dmousewheel",
+    "body": [
+      "stat(36)"
+    ],
+    "description": "Mouse wheel"
+  },
+  "map": {
+    "prefix": "map",
+    "body": [
+      "map(${1:cel_x},${2:cel_y},${3:sx},${4:sy},${5:cel_w},${6:cel_h}${7:,layer})"
+    ],
+    "description": "Draw map region"
+  },
+  "mget": {
+    "prefix": "mget",
+    "body": [
+      "mget(${1:x},${2:y})"
+    ],
+    "description": "Get map tile"
+  },
+  "mset": {
+    "prefix": "mset",
+    "body": [
+      "mset(${1:x},${2:y},${3:v})"
+    ],
+    "description": "Set map tile"
+  },
+  "abs": {
+    "prefix": "abs",
+    "body": [
+      "abs(${1:x})"
+    ],
+    "description": "Absolute value"
+  },
+  "atan2": {
+    "prefix": "atan2",
+    "body": [
+      "atan2(${1:dx},${2:dy})"
+    ],
+    "description": "Angle 0-1 from dx,dy"
+  },
+  "band": {
+    "prefix": "band",
+    "body": [
+      "band(${1:x},${2:y})"
+    ],
+    "description": "Bitwise and"
+  },
+  "bnot": {
+    "prefix": "bnot",
+    "body": [
+      "bnot(${1:x})"
+    ],
+    "description": "Bitwise not"
+  },
+  "bor": {
+    "prefix": "bor",
+    "body": [
+      "bor(${1:x},${2:y})"
+    ],
+    "description": "Bitwise or"
+  },
+  "bxor": {
+    "prefix": "bxor",
+    "body": [
+      "bxor(${1:x},${2:y})"
+    ],
+    "description": "Bitwise xor"
+  },
+  "flr": {
+    "prefix": "flr",
+    "body": [
+      "flr(${1:x})"
+    ],
+    "description": "Round down"
+  },
+  "ceil": {
+    "prefix": "ceil",
+    "body": [
+      "ceil(${1:x})"
+    ],
+    "description": "Round up"
+  },
+  "min": {
+    "prefix": "min",
+    "body": [
+      "min(${1:x},${2:y})"
+    ],
+    "description": "Minimum"
+  },
+  "max": {
+    "prefix": "max",
+    "body": [
+      "max(${1:x},${2:y})"
+    ],
+    "description": "Maximum"
+  },
+  "mid": {
+    "prefix": "mid",
+    "body": [
+      "mid(${1:x},${2:y},${3:z})"
+    ],
+    "description": "Middle value / clamp"
+  },
+  "srand": {
+    "prefix": "srand",
+    "body": [
+      "srand(${1:seed})"
+    ],
+    "description": "Seed rnd"
+  },
+  "rnd": {
+    "prefix": "rnd",
+    "body": [
+      "rnd(${1:x})"
+    ],
+    "description": "Random 0 <= n < x"
+  },
+  "sgn": {
+    "prefix": "sgn",
+    "body": [
+      "sgn(${1:x})"
+    ],
+    "description": "Sign (-1 or 1)"
+  },
+  "shl": {
+    "prefix": "shl",
+    "body": [
+      "shl(${1:x},${2:n})"
+    ],
+    "description": "Shift left"
+  },
+  "shr": {
+    "prefix": "shr",
+    "body": [
+      "shr(${1:x},${2:n})"
+    ],
+    "description": "Shift right"
+  },
+  "sin": {
+    "prefix": "sin",
+    "body": [
+      "sin(${1:x})"
+    ],
+    "description": "Sine (0-1, inverted)"
+  },
+  "cos": {
+    "prefix": "cos",
+    "body": [
+      "cos(${1:x})"
+    ],
+    "description": "Cosine (0-1)"
+  },
+  "sqrt": {
+    "prefix": "sqrt",
+    "body": [
+      "sqrt(${1:x})"
+    ],
+    "description": "Square root"
+  },
+  "round": {
+    "prefix": "round",
+    "body": [
+      "flr(${1:x}+0.5)"
+    ],
+    "description": "Round to nearest"
+  },
+  "memcpy": {
+    "prefix": "memcpy",
+    "body": [
+      "memcpy(${1:dest},${2:src},${3:len})"
+    ],
+    "description": "Copy memory"
+  },
+  "memset": {
+    "prefix": "memset",
+    "body": [
+      "memset(${1:dest},${2:val},${3:len})"
+    ],
+    "description": "Fill memory"
+  },
+  "peek": {
+    "prefix": "peek",
+    "body": [
+      "peek(${1:addr})"
+    ],
+    "description": "Read byte"
+  },
+  "poke": {
+    "prefix": "poke",
+    "body": [
+      "poke(${1:addr},${2:val})"
+    ],
+    "description": "Write byte"
+  },
+  "gpior": {
+    "prefix": "gpior",
+    "body": [
+      "peek(0x5f80+${1:pin})"
+    ],
+    "description": "Read GPIO pin"
+  },
+  "gpiow": {
+    "prefix": "gpiow",
+    "body": [
+      "poke(0x5f80+${1:pin},${2:val})"
+    ],
+    "description": "Write GPIO pin"
+  },
+  "memgfx": {
+    "prefix": "memgfx",
+    "body": [
+      "0x0000"
+    ],
+    "description": "Base address: Sprite sheet"
+  },
+  "memmap": {
+    "prefix": "memmap",
+    "body": [
+      "0x2000"
+    ],
+    "description": "Base address: Map"
+  },
+  "memgfxprops": {
+    "prefix": "memgfxprops",
+    "body": [
+      "0x3000"
+    ],
+    "description": "Base address: Sprite flags"
+  },
+  "memsong": {
+    "prefix": "memsong",
+    "body": [
+      "0x3100"
+    ],
+    "description": "Base address: Music"
+  },
+  "memsfx": {
+    "prefix": "memsfx",
+    "body": [
+      "0x3200"
+    ],
+    "description": "Base address: SFX"
+  },
+  "memud": {
+    "prefix": "memud",
+    "body": [
+      "0x4300"
+    ],
+    "description": "Base address: User data"
+  },
+  "memcd": {
+    "prefix": "memcd",
+    "body": [
+      "0x5e00"
+    ],
+    "description": "Base address: Persistent cart data"
+  },
+  "memds": {
+    "prefix": "memds",
+    "body": [
+      "0x5f00"
+    ],
+    "description": "Base address: Draw state"
+  },
+  "memgpio": {
+    "prefix": "memgpio",
+    "body": [
+      "0x5f80"
+    ],
+    "description": "Base address: GPIO"
+  },
+  "memscr": {
+    "prefix": "memscr",
+    "body": [
+      "0x6000"
+    ],
+    "description": "Base address: Screen"
+  },
+  "add": {
+    "prefix": "add",
+    "body": [
+      "add(${1:t},${2:v})"
+    ],
+    "description": "Append to table"
+  },
+  "del": {
+    "prefix": "del",
+    "body": [
+      "del(${1:t},${2:v})"
+    ],
+    "description": "Delete value from table"
+  },
+  "deli": {
+    "prefix": "deli",
+    "body": [
+      "deli(${1:t}${2:,i})"
+    ],
+    "description": "Delete by index"
+  },
+  "count": {
+    "prefix": "count",
+    "body": [
+      "count(${1:t})"
+    ],
+    "description": "Count items"
+  },
+  "foreach": {
+    "prefix": "foreach",
+    "body": [
+      "foreach(${1:t},function(${2:v})",
+      "\t$0",
+      "end)"
+    ],
+    "description": "foreach callback"
+  },
+  "sub": {
+    "prefix": "sub",
+    "body": [
+      "sub(${1:str},${2:from}${3:,to})"
+    ],
+    "description": "Substring"
+  },
+  "tostr": {
+    "prefix": "tostr",
+    "body": [
+      "tostr(${1:v})"
+    ],
+    "description": "To string"
+  },
+  "tonum": {
+    "prefix": "tonum",
+    "body": [
+      "tonum(${1:str})"
+    ],
+    "description": "To number"
+  },
+  "split": {
+    "prefix": "split",
+    "body": [
+      "split(${1:str}${2:,sep,convert})"
+    ],
+    "description": "Split string"
+  },
+  "stat": {
+    "prefix": "stat",
+    "body": [
+      "stat(${1:n})"
+    ],
+    "description": "System status"
+  },
+  "printh": {
+    "prefix": "printh",
+    "body": [
+      "printh(${1:str})"
+    ],
+    "description": "Print to host console"
+  },
+  "menuitem": {
+    "prefix": "menuitem",
+    "body": [
+      "menuitem(${1:index},${2:\"label\"},${3:function(b) $0 end})"
+    ],
+    "description": "Pause menu item"
+  },
+  "time": {
+    "prefix": "time",
+    "body": [
+      "time()"
+    ],
+    "description": "Seconds since start"
+  },
+  "_init": {
+    "prefix": "_init",
+    "body": [
+      "function _init()",
+      "\t$0",
+      "end"
+    ],
+    "description": "PICO-8 _init() lifecycle callback"
+  },
+  "_update": {
+    "prefix": "_update",
+    "body": [
+      "function _update()",
+      "\t$0",
+      "end"
+    ],
+    "description": "PICO-8 _update() 30fps lifecycle callback"
+  },
+  "_update60": {
+    "prefix": "_update60",
+    "body": [
+      "function _update60()",
+      "\t$0",
+      "end"
+    ],
+    "description": "PICO-8 _update60() 60fps lifecycle callback"
+  },
+  "_draw": {
+    "prefix": "_draw",
+    "body": [
+      "function _draw()",
+      "\tcls(${1:0})",
+      "\t$0",
+      "end"
+    ],
+    "description": "PICO-8 _draw() lifecycle callback"
+  },
+  "peek2": {
+    "prefix": "peek2",
+    "body": [
+      "peek2(${1:addr}${2:,n})"
+    ],
+    "description": "Read 16-bit integer from memory"
+  },
+  "peek4": {
+    "prefix": "peek4",
+    "body": [
+      "peek4(${1:addr}${2:,n})"
+    ],
+    "description": "Read 32-bit fixed-point number from memory"
+  },
+  "poke2": {
+    "prefix": "poke2",
+    "body": [
+      "poke2(${1:addr},${2:val})"
+    ],
+    "description": "Write 16-bit integer to memory"
+  },
+  "poke4": {
+    "prefix": "poke4",
+    "body": [
+      "poke4(${1:addr},${2:val})"
+    ],
+    "description": "Write 32-bit fixed-point number to memory"
+  },
+  "ord": {
+    "prefix": "ord",
+    "body": [
+      "ord(${1:str}${2:,index})"
+    ],
+    "description": "Get P8SCII ordinal of character"
+  },
+  "chr": {
+    "prefix": "chr",
+    "body": [
+      "chr(${1:val})"
+    ],
+    "description": "Convert P8SCII ordinal(s) to string"
+  },
+  "all": {
+    "prefix": "all",
+    "body": [
+      "all(${1:tbl})"
+    ],
+    "description": "Sequence iterator for for...in"
+  },
+  "pairs": {
+    "prefix": "pairs",
+    "body": [
+      "pairs(${1:tbl})"
+    ],
+    "description": "Key-value table iterator"
+  },
+  "ipairs": {
+    "prefix": "ipairs",
+    "body": [
+      "ipairs(${1:tbl})"
+    ],
+    "description": "Index-value sequence iterator"
+  },
+  "setmetatable": {
+    "prefix": "setmetatable",
+    "body": [
+      "setmetatable(${1:tbl},${2:mt})"
+    ],
+    "description": "Set table metatable"
+  },
+  "getmetatable": {
+    "prefix": "getmetatable",
+    "body": [
+      "getmetatable(${1:tbl})"
+    ],
+    "description": "Get table metatable"
+  },
+  "assert": {
+    "prefix": "assert",
+    "body": [
+      "assert(${1:cond}${2:,\"message\"})"
+    ],
+    "description": "Assert condition"
+  },
+  "stop": {
+    "prefix": "stop",
+    "body": [
+      "stop(${1:message})"
+    ],
+    "description": "Stop cart execution"
+  },
+  "trace": {
+    "prefix": "trace",
+    "body": [
+      "trace(${1:co}${2:,message,skip})"
+    ],
+    "description": "Return stack trace string"
+  },
+  "extcmd": {
+    "prefix": "extcmd",
+    "body": [
+      "extcmd(\"${1:screen}\")"
+    ],
+    "description": "Execute host administrative command"
+  },
+  "serial": {
+    "prefix": "serial",
+    "body": [
+      "serial(${1:channel},${2:address},${3:length})"
+    ],
+    "description": "Read/write serial/GPIO stream"
+  },
+  "load": {
+    "prefix": "load",
+    "body": [
+      "load(\"${1:filename.p8}\"${2:,breadcrumb,param})"
+    ],
+    "description": "Load another cartridge"
+  },
+  "reset": {
+    "prefix": "reset",
+    "body": [
+      "reset()"
+    ],
+    "description": "Reset draw state (0x5f00..0x5f7f)"
+  },
+  "btn_left": {
+    "prefix": "btn_left",
+    "body": [
+      "⬅️"
+    ],
+    "description": "PICO-8 Left button glyph (0)"
+  },
+  "btn_right": {
+    "prefix": "btn_right",
+    "body": [
+      "➡️"
+    ],
+    "description": "PICO-8 Right button glyph (1)"
+  },
+  "btn_up": {
+    "prefix": "btn_up",
+    "body": [
+      "⬆️"
+    ],
+    "description": "PICO-8 Up button glyph (2)"
+  },
+  "btn_down": {
+    "prefix": "btn_down",
+    "body": [
+      "⬇️"
+    ],
+    "description": "PICO-8 Down button glyph (3)"
+  },
+  "btn_o": {
+    "prefix": "btn_o",
+    "body": [
+      "🅾️"
+    ],
+    "description": "PICO-8 O button glyph (4)"
+  },
+  "btn_x": {
+    "prefix": "btn_x",
+    "body": [
+      "❎"
+    ],
+    "description": "PICO-8 X button glyph (5)"
+  }
+}
