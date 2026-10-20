@@ -1,0 +1,52 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "pico8",
+      "camelcase": "Pico8",
+      "title": "Pico-8",
+      "scope": "source.pico8",
+      "file-types": [
+        "p8"
+      ],
+      "injection-regex": "^pico8$",
+      "class-name": "TreeSitterPico8",
+      "highlights": [
+        "queries/highlights.scm"
+      ],
+      "injections": [
+        "queries/injections.scm"
+      ],
+      "locals": [
+        "queries/locals.scm"
+      ],
+      "tags": [
+        "queries/tags.scm"
+      ]
+    }
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "license": "MIT",
+    "description": "Pico-8 grammar for Tree-sitter",
+    "authors": [
+      {
+        "name": "Marcelo de Gomensoro Malheiros",
+        "url": "https://github.com/mgmalheiros/"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/mgmalheiros/tree-sitter-pico8"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": false,
+    "java": false,
+    "node": false,
+    "python": false,
+    "rust": false,
+    "swift": false,
+    "zig": false
+  }
+}
