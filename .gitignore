@@ -1,0 +1,6 @@
+/target
+/extension.wasm
+/grammars/*.wasm
+/grammars/pico8
+node_modules/
+.DS_Store
